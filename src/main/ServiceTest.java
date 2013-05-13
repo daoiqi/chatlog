@@ -29,7 +29,7 @@ public class ServiceTest {
 		
 		DataSource source = new QQPCChatLog();
 		System.out.println(Paths.get("Test.txt"));
-		source.setFilePath(Paths.get("Test.txt"));
+		source.setFilePath(Paths.get("U729512441.txt"));
 //		source.print();
 		List<ChatEntity> datas = source.getData();
 		for (ChatEntity chatEntity : datas) {

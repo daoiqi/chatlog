@@ -19,7 +19,10 @@ import main.ChatEntity;
  * 
  */
 public class QQPCChatLog extends DataSource {
-	private static String compileTimeAndNickName = "(\\d{4}\\/\\d{2}/\\d{2} \\d{2}:\\d{2}:\\d{2}) (.*)?";
+	/**
+	 * 昵称格式：\d{4}/\d{1,2}/\d{1,2} \d{2}:\d{2}:\d{2}
+	 */
+	private static String compileTimeAndNickName = "(\\d{4}/\\d{1,2}/\\d{1,2} \\d{2}:\\d{2}:\\d{2}) (.*)?";
 	private List<ChatEntity> list = new LinkedList<>();
 //	public int[] statuses = { DontKnow, TimeAndNickname, Content, BreakLine };
 //	public static final int DontKnow = 0;
@@ -64,7 +67,6 @@ public class QQPCChatLog extends DataSource {
 		nowString = readLine();
 		ChatEntity chatEntity=null;
 		while (nowString != null) {
-			
 			parse(nowString);
 			
 			switch(this.oldStatus){

@@ -2,6 +2,9 @@ package datasource;
 
 import static org.junit.Assert.*;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +25,7 @@ public class QQPCChatLogTest {
 		//fail("Not yet implemented");
 	}
 	
-	@Test
+	//@Test
 	public void testParse(){
 		String s = "2012/12/12 12:24:12 米图";
 		String s1 = "你好";
@@ -42,5 +45,14 @@ public class QQPCChatLogTest {
 //		assertEquals(QQPCChatLog.TimeAndNickname,test.nowstatus);
 //		assertEquals(QQPCChatLog.TimeAndNickname,test.parser(ss[4]));	
 		}
+	
+	@Test
+	public void testReg(){
+		String reg = "\\d{4}/\\d{1,2}/\\d{1,2}";
+		String s = "2012/12/12";
+		Pattern compile = Pattern.compile(reg);
+		Matcher matcher = compile.matcher(s);
+		System.out.println(matcher.matches());
+	}
 
 }
