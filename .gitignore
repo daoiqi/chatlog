@@ -1,6 +1,9 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+/bin
+/.settings
+.classpath
+.gitignore
+.project
+/.git
+/*.xml
+/*.bak
+/*.txt
